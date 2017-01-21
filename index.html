@@ -1,0 +1,765 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PONPES AL-HIDAYAH</title>
+<script type="text/javascript" src="js/jquery/jquery.js"></script>
+<script type="text/javascript" src="js/bootstrap/bootstrap.js"></script>
+<link rel="stylesheet" href="css/bootstrap.css" />
+<link rel="stylesheet" href="css/design.css" />
+<script type="text/javascript">
+$(document).ready(function() {
+	
+	$.ajax({
+		url: "headline_news.php",
+		method : 'POST',
+		data: "op=ambil_berita", 
+		cache: false, 
+		success: function(msg){
+			data = msg.split("|");
+			$("#id_berita").val(data[0]);
+			$("#judul_berita").val(data[1]);
+			$("#deskripsi_berita").val(data[2]);
+			$("#tanggal_berita").val(data[5]);
+			
+			judul_berita = $("#judul_berita").val();
+			deskripsi_berita = $("#deskripsi_berita").val();
+			tanggal_berita = $("#tanggal_berita").val();
+			
+			$("#judul_berita_teks").html(judul_berita);
+			$("#deskripsi_berita_teks").html(deskripsi_berita);
+			$("#tanggal_berita_teks").html(tanggal_berita);
+		}
+	});
+	$.ajax({
+		url: "headline_news.php",
+		method : 'POST',
+		data: "op=ambil_berita1", 
+		cache: false, 
+		success: function(msg){
+			data = msg.split("|");
+			$("#id_berita1").val(data[0]);
+			$("#judul_berita1").val(data[1]);
+			$("#deskripsi_berita1").val(data[2]);
+			$("#tanggal_berita1").val(data[5]);
+			
+			judul_berita = $("#judul_berita1").val();
+			deskripsi_berita = $("#deskripsi_berita1").val();
+			tanggal_berita = $("#tanggal_berita1").val();
+			
+			$("#judul_berita1_teks").html(judul_berita);
+			$("#deskripsi_berita1_teks").html(deskripsi_berita);
+			$("#tanggal_berita1_teks").html(tanggal_berita);			
+		}
+	});
+	$.ajax({
+		url: "headline_news.php",
+		method : 'POST',
+		data: "op=ambil_berita2", 
+		cache: false, 
+		success: function(msg){
+			data = msg.split("|");
+			$("#id_berita2").val(data[0]);
+			$("#judul_berita2").val(data[1]);
+			$("#deskripsi_berita2").val(data[2]);
+			$("#tanggal_berita2").val(data[5]);
+			
+			judul_berita = $("#judul_berita2").val();
+			deskripsi_berita = $("#deskripsi_berita2").val();
+			tanggal_berita = $("#tanggal_berita2").val();
+			
+			$("#judul_berita2_teks").html(judul_berita);
+			$("#deskripsi_berita2_teks").html(deskripsi_berita);
+			$("#tanggal_berita2_teks").html(tanggal_berita);
+		}
+	});
+	
+	$.ajax({
+		url: "schedule_list.php",
+		method : 'POST',
+		data: "op=ambil_agenda", 
+		cache: false, 
+		success: function(msg){
+			data = msg.split("|");
+			$("#id_agenda").val(data[0]);
+			$("#judul_agenda").val(data[1]);
+			$("#keterangan_agenda").val(data[2]);
+			$("#tanggal_agenda").val(data[3]);
+			
+			judul_agenda = $("#judul_agenda").val();
+			keterangan_agenda = $("#keterangan_agenda").val();
+			tanggal_agenda = $("#tanggal_agenda").val();
+			
+			$("#judul_agenda_text").html(judul_agenda);
+			$("#keterangan_agenda_text").html(keterangan_agenda);
+			$("#tanggal_agenda_text").html(tanggal_agenda);
+		}
+	});
+	$.ajax({
+		url: "schedule_list.php",
+		method : 'POST',
+		data: "op=ambil_agenda1", 
+		cache: false, 
+		success: function(msg){
+			data = msg.split("|");
+			$("#id_agenda1").val(data[0]);
+			$("#judul_agenda1").val(data[1]);
+			$("#keterangan_agenda1").val(data[2]);
+			$("#tanggal_agenda1").val(data[3]);
+			
+			judul_agenda = $("#judul_agenda1").val();
+			keterangan_agenda = $("#keterangan_agenda1").val();
+			tanggal_agenda = $("#tanggal_agenda1").val();
+			
+			$("#judul_agenda1_text").html(judul_agenda);
+			$("#keterangan_agenda1_text").html(keterangan_agenda);
+			$("#tanggal_agenda1_text").html(tanggal_agenda);
+		}
+	});
+	$.ajax({
+		url: "schedule_list.php",
+		method : 'POST',
+		data: "op=ambil_agenda2", 
+		cache: false, 
+		success: function(msg){
+			data = msg.split("|");
+			$("#id_agenda2").val(data[0]);
+			$("#judul_agenda2").val(data[1]);
+			$("#keterangan_agenda2").val(data[2]);
+			$("#tanggal_agenda2").val(data[3]);
+			
+			judul_agenda = $("#judul_agenda2").val();
+			keterangan_agenda = $("#keterangan_agenda2").val();
+			tanggal_agenda = $("#tanggal_agenda2").val();
+			
+			$("#judul_agenda2_text").html(judul_agenda);
+			$("#keterangan_agenda2_text").html(keterangan_agenda);
+			$("#tanggal_agenda2_text").html(tanggal_agenda);
+		}
+	});
+	
+	$.ajax({
+		url: "announcement_list.php",
+		method : 'POST',
+		data: "op=ambil_pengumuman", 
+		cache: false, 
+		success: function(msg){
+			data = msg.split("|");
+			$("#id_pengumuman").val(data[0]);
+			$("#konten_pengumuman").val(data[1]);
+			$("#tanggal_pengumuman").val(data[2]);
+			
+			konten_pengumuman = $("#konten_pengumuman").val();
+			tanggal_pengumuman = $("#tanggal_pengumuman").val();
+			
+			$("#konten_pengumuman_text").html(konten_pengumuman);
+			$("#tanggal_pengumuman_text").html(tanggal_pengumuman);
+		}
+	});
+	$.ajax({
+		url: "announcement_list.php",
+		method : 'POST',
+		data: "op=ambil_pengumuman1", 
+		cache: false, 
+		success: function(msg){
+			data = msg.split("|");
+			$("#id_pengumuman1").val(data[0]);
+			$("#konten_pengumuman1").val(data[1]);
+			$("#tanggal_pengumuman1").val(data[2]);
+			
+			konten_pengumuman = $("#konten_pengumuman1").val();
+			tanggal_pengumuman = $("#tanggal_pengumuman1").val();
+			
+			$("#konten_pengumuman1_text").html(konten_pengumuman);
+			$("#tanggal_pengumuman1_text").html(tanggal_pengumuman);
+		}
+	});
+	$.ajax({
+		url: "announcement_list.php",
+		method : 'POST',
+		data: "op=ambil_pengumuman2", 
+		cache: false, 
+		success: function(msg){
+			data = msg.split("|");
+			$("#id_pengumuman2").val(data[0]);
+			$("#konten_pengumuman2").val(data[1]);
+			$("#tanggal_pengumuman2").val(data[2]);
+			
+			konten_pengumuman = $("#konten_pengumuman2").val();
+			tanggal_pengumuman = $("#tanggal_pengumuman2").val();
+			
+			$("#konten_pengumuman2_text").html(konten_pengumuman);
+			$("#tanggal_pengumuman2_text").html(tanggal_pengumuman);
+		}
+	});
+	
+	$('#before-icon-profil').show();
+	$('#after-icon-profil').hide();
+	$("#dropdown-profil").hover(function(){
+		$('#before-icon-profil').hide();
+		$('#after-icon-profil').show();
+        }, function(){
+			$('#before-icon-profil').show();
+			$('#after-icon-profil').hide();
+    	});
+		
+	$('#before-icon-organization').show();
+	$('#after-icon-organization').hide();
+	$("#dropdown-organization").hover(function(){
+		$('#before-icon-organization').hide();
+		$('#after-icon-organization').show();
+        }, function(){
+			$('#before-icon-organization').show();
+			$('#after-icon-organization').hide();
+    	});
+		
+	$('#before-icon-new-academic').show();
+	$('#after-icon-new-academic').hide();
+	$("#dropdown-new-academic").hover(function(){
+		$('#before-icon-new-academic').hide();
+		$('#after-icon-new-academic').show();
+        }, function(){
+			$('#before-icon-new-academic').show();
+			$('#after-icon-new-academic').hide();
+    	});
+		
+	$('#before-icon-contact').show();
+	$('#after-icon-contact').hide();
+	$("#dropdown-contact").hover(function(){
+		$('#before-icon-contact').hide();
+		$('#after-icon-contact').show();
+        }, function(){
+			$('#before-icon-contact').show();
+			$('#after-icon-contact').hide();
+    	});
+		
+	$('#twitter-black').show();
+	$('#twitter-white').hide();
+	$("#twitter-icon").hover(function(){
+		$('#twitter-black').hide();
+		$('#twitter-white').show();
+        }, function(){
+			$('#twitter-black').show();
+			$('#twitter-white').hide();
+    	});
+		
+	$('#instagram-black').show();
+	$('#instagram-white').hide();
+	$("#instagram-icon").hover(function(){
+		$('#instagram-black').hide();
+		$('#instagram-white').show();
+        }, function(){
+			$('#instagram-black').show();
+			$('#instagram-white').hide();
+    	});
+		
+	$('#google-black').show();
+	$('#google-white').hide();
+	$("#google-icon").hover(function(){
+		$('#google-black').hide();
+		$('#google-white').show();
+        }, function(){
+			$('#google-black').show();
+			$('#google-white').hide();
+    	});
+		
+	$('#facebook-black').show();
+	$('#facebook-white').hide();
+	$("#facebook-icon").hover(function(){
+		$('#facebook-black').hide();
+		$('#facebook-white').show();
+        }, function(){
+			$('#facebook-black').show();
+			$('#facebook-white').hide();
+    	});
+		
+	$('#blogger-black').show();
+	$('#blogger-white').hide();
+	$("#blogger-icon").hover(function(){
+		$('#blogger-black').hide();
+		$('#blogger-white').show();
+        }, function(){
+			$('#blogger-black').show();
+			$('#blogger-white').hide();
+    	});
+		
+});
+</script>
+</head>
+
+<body>
+
+<nav class="navbar navbar-default navbar-static-top bg-theme">
+  <div class="container">
+     <!--Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>-->
+      <a class="navbar-brand logo-font" href="index.html" title="Al-Hidayah"><span class="logo-style">Al-Hidayah</span></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!--<div class="collapse navbar-collapse navbar-right navbar-menu-font" id="bs-example-navbar-collapse-1">-->
+    <div class="navbar-right navbar-menu-font">
+      <ul class="nav navbar-nav">
+       	<li class="navbar-style parallelogram"><a href="student.html" title="Database Santri"><span class="navbar-style-span navbar-color-font">Santri</span></a></li>
+        <li class="navbar-style parallelogram"><a href="teacher.html" title="Database Pengajar"><span class="navbar-style-span navbar-color-font">Pengajar</span></a></li>
+        <li class="navbar-style parallelogram"><a href="academic/index.html" title="Halaman Akademik Santri"><span class="navbar-style-span navbar-color-font">Akademik</span></a></li>
+        <li class="navbar-style parallelogram"><a href="administrator/index.html" title="Halaman Manajemen Admin"><span class="navbar-style-span navbar-color-font">Administrator</span></a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<nav class="navbar navbar-default bg-navbar2">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <!--<a class="navbar-brand logo-font" href="index.html"><span class="navbar-color-font">Al-Hidayah</span></a>-->
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-menu-font" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar2-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="dropdown-profil">PROFIL&nbsp;
+            <i class="glyphicon glyphicon-chevron-down" id="before-icon-profil"></i>
+            <i class="glyphicon glyphicon-arrow-right" id="after-icon-profil"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-navbar2">
+            <li><a href="profile.html#about">Tentang Pondok Pesantren</a></li>
+            <li><a href="profile.html#vm">Visi & Misi</a></li>
+            <li><a href="profile.html#work-program">Program Kerja</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="dropdown-organization">ORGANISASI&nbsp;
+            <i class="glyphicon glyphicon-chevron-down" id="before-icon-organization"></i>
+            <i class="glyphicon glyphicon-arrow-right" id="after-icon-organization"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-navbar2">
+            <li><a href="organization.html#structure">Struktur Organisasi</a></li>
+            <li><a href="organization.html#student-data">Data Santri</a></li>
+            <li><a href="organization.html#teacher-data">Data Pengajar</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="dropdown-new-academic">AKADEMIK BARU&nbsp;
+            <i class="glyphicon glyphicon-chevron-down" id="before-icon-new-academic"></i>
+            <i class="glyphicon glyphicon-arrow-right" id="after-icon-new-academic"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-navbar2">
+            <li><a href="new_academic.html#registration">Pendaftaran Calon Santri</a></li>
+            <li><a href="new_academic.html#login">Halaman Calon Santri</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="dropdown-contact">KONTAK&nbsp;
+            <i class="glyphicon glyphicon-chevron-down" id="before-icon-contact"></i>
+            <i class="glyphicon glyphicon-arrow-right" id="after-icon-contact"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-navbar2">
+            <li><a href="contact.html#contact">Kontak Pondok Pesantren</a></li>
+            <li><a href="contact.html#comment">Saran & Komentar</a></li>
+          </ul>
+        </li>
+        <li><a href="gallery.html"><span>GALERI</span></a></li>
+        <li><a href="news.html"><span>BERITA</span></a></li>
+        <li><a href="donation.html"><span>DONASI</span></a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+<!-- Header (Indeks Section) -->
+<div class="jumbotron text-center header-style header-style-font">
+  <div class="container-fluid">
+	<br /><br />
+	<div id="carousel-example-generic" class="carousel carousel-style" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <!--<li data-target="#carousel-example-generic" data-slide-to="2"></li>-->
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="item active">
+          <div class="flex-row row">
+            <div class="col-sm-3 col-md-3" style="background-color:#8db438; padding-top:30px; padding-bottom:30px;">
+              <center>
+                <img class="img-responsive" src="images/carousel_photo/1482692940_SEO_courses_training_flipchart.png" alt="Image 1" width="256" height="256">
+              </center>
+            </div>
+            <div class="col-sm-3 col-md-3" style="background-color: #8db438; padding-left:20px; padding-right:20px; padding-top:30px; padding-bottom:30px; color:#000; text-align:left;">
+              <h4><span style="font-weight:bold; background-color:#222; color:#FFF; font-family:myCarouselFont; padding:15px; display:inline-block;">MADRASAH IBTIDAIYAH</span></h4>
+              <span style="background-color:#e6f6d2; color:#222; font-family:myCarouselFont; padding:15px; margin-top:7px; display:inline-block;">Pendaftaran santri baru untuk jenjang Madrasah Ibtidaiyah tahun ajaran 2017-2018 Pondok Pesantren Al-Hidayah</span>
+            </div>
+            <div class="col-sm-6 col-md-6" style="background-color: #222222; padding-left:20px; padding-right:40px; padding-top:30px; padding-bottom:30px;">
+              <span style="color:#FFF; font-family:myCarouselFont; font-size:18px; margin-top:70px;">Madrasah Ibtidaiyah (disingkat MI) adalah jenjang paling dasar pada pendidikan formal di Indonesia, setara dengan Sekolah Dasar, yang pengelolaannya dilakukan oleh Kementerian Agama. Pendidikan Madrasah Ibtidaiyah ditempuh dalam waktu 6 tahun, mulai dari kelas 1 sampai kelas 6.</span>
+            </div>
+            <!--<div class="carousel-caption">
+              <h4>Madrasah Ibtidaiyah</h4>
+            </div>-->
+          </div>
+        </div>
+        <div class="item">
+          <div class="flex-row row">
+            <div class="col-sm-3 col-md-3" style="background-color:#222; padding-top:30px; padding-bottom:30px;">
+              <center>
+                <img class="img-responsive" src="images/carousel_photo/1482720235_SEO_usability_audit_search(2)_.png" alt="Image 2" width="256" height="256">
+              </center>
+            </div>
+            <div class="col-sm-3 col-md-3" style="background-color: #222; padding-left:20px; padding-right:20px; padding-top:30px; padding-bottom:30px; color:#000; text-align:left;">
+              <span style="background-color:#8db438; color:#FFF; font-family:myCarouselFont; padding:15px; display:inline-block;">Pendaftaran santri baru untuk jenjang Madrasah Tsanawiyah tahun ajaran 2017-2018 Pondok Pesantren Al-Hidayah</span>
+              <h4><span style="font-weight:bold; background-color:#e6f6d2; color:#222; font-family:myCarouselFont; padding:15px; display:inline-block; margin-top:7px;">MADRASAH TSANAWIYAH</span></h4>
+              
+            </div>
+            <div class="col-sm-6 col-md-6" style="background-color: #8db438; padding-left:20px; padding-right:40px; padding-top:30px; padding-bottom:30px;">
+              <span style="color:#222; font-family:myCarouselFont; font-size:18px; margin-top:70px;">Madrasah Tsanawiyah (disingkat MTs) adalah jenjang dasar pada pendidikan formal di Indonesia, setara dengan sekolah menengah pertama, yang pengelolaannya dilakukan oleh Departemen Agama. Pendidikan Madrasah Tsanawiyah ditempuh dalam waktu 3 tahun, mulai dari kelas 7 sampai kelas 9.</span>
+            </div>
+            <!--<div class="carousel-caption">
+              <h4>Madrasah Ibtidaiyah</h4>
+            </div>-->
+          </div>
+        </div>
+        <!--<div class="item">
+          <img src="images/carousel_photo/11168431_924386367597902_7472958486967765517_n.png" alt="...">
+          <div class="carousel-caption">
+            <h2>Madrasah Tsanawiyah</h2>
+          </div>
+        </div>
+        <div class="item">
+          <img src="images/carousel_photo/11692615_922990014404204_319271337874367429_n.png" alt="...">
+          <div class="carousel-caption">
+            <h2>Ekstrakurikuler</h2>
+          </div>
+        </div>-->
+      </div>
+
+      <!-- Controls -->
+      <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
+    </div>
+    
+  </div>
+</div>
+
+
+<div class="container-fluid text-center shortcut-menu-icon">
+
+  <div class="row row-icon">
+  
+    <div class="col-sm-4 agenda-icon inset-border-agenda">
+      <a href="index.html#agenda">
+        <img class="img-responsive" src="images/shortcut_menu_icons/1484672500_Calender.png" alt="Agenda" width="96" height="96">
+        <span>AGENDA</span>
+      </a>
+    </div>
+    <div class="col-sm-4 news-icon inset-border-news">
+      <a href="index.html#news">
+        <img class="img-responsive" src="images/shortcut_menu_icons/1484672634_Document-File_2.png" alt="Berita" width="96" height="96">
+        <span>BERITA</span>
+      </a>
+    </div>
+    <div class="col-sm-4 announcement-icon inset-border-announcement">
+      <a href="index.html#announcement">
+        <img class="img-responsive" src="images/shortcut_menu_icons/1484672822_Mic.png" alt="Pengumuman" width="96" height="96">
+        <span>PENGUMUMAN</span>
+      </a>
+    </div>
+    
+  </div>
+  
+  <hr class="index-line" />
+  <div class="index-title">
+  <span>AL-HIDAYAH</span>
+  </div>
+  
+  <div class="row row-agenda" id="agenda">
+  
+  	<div class="header-section-agenda">
+      <blockquote>
+        <span>AGENDA</span>
+        <p>Daftar agenda kegiatan Pondok Pesantren Al-Hidayah</p>
+      </blockquote>
+    </div>
+    <div class="panel-group agenda-style" id="accordion">
+      <input type="text" id="id_agenda" hidden="hidden" />
+      <input type="text" id="judul_agenda" hidden="hidden" />
+      <input type="text" id="keterangan_agenda" hidden="hidden" />
+      <input type="text" id="tanggal_agenda" hidden="hidden" />
+      <div class="panel panel-agenda">
+        <div class="panel-heading">
+          <h4 class="panel-title">          
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" style="text-decoration: none;">
+              [<span id="tanggal_agenda_text"></span>]&nbsp;
+          	  <span id="judul_agenda_text"></span>
+            </a>
+          </h4>
+        </div>
+        <div id="collapse1" class="panel-collapse collapse in">
+          <div class="panel-body">
+            <p id="keterangan_agenda_text"></p>
+          </div>
+        </div>
+      </div>
+      <input type="text" id="id_agenda1" hidden="hidden" />
+      <input type="text" id="judul_agenda1" hidden="hidden" />
+      <input type="text" id="keterangan_agenda1" hidden="hidden" />
+      <input type="text" id="tanggal_agenda1" hidden="hidden" />
+      <div class="panel panel-agenda">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" style="text-decoration: none;">
+          	  [<span id="tanggal_agenda1_text"></span>]&nbsp;
+          	  <span id="judul_agenda1_text"></span>
+            </a>
+          </h4>
+        </div>
+        <div id="collapse2" class="panel-collapse collapse">
+          <div class="panel-body">
+            <p id="keterangan_agenda1_text"></p>
+          </div>
+        </div>
+      </div>
+      <input type="text" id="id_agenda2" hidden="hidden" />
+      <input type="text" id="judul_agenda2" hidden="hidden" />
+      <input type="text" id="keterangan_agenda2" hidden="hidden" />
+      <input type="text" id="tanggal_agenda2" hidden="hidden" />
+      <div class="panel panel-agenda">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse3" style="text-decoration: none;">
+	          [<span id="tanggal_agenda2_text"></span>]&nbsp;
+          	  <span id="judul_agenda2_text"></span>
+            </a>
+          </h4>
+        </div>
+        <div id="collapse3" class="panel-collapse collapse">
+          <div class="panel-body">
+            <p id="keterangan_agenda2_text"></p>
+          </div>
+        </div>
+      </div>
+    </div> 
+  
+  </div>
+  
+  <div class="row row-news" id="news">
+  
+    <div class="header-section-news">
+      <blockquote>
+        <span>BERITA</span>
+        <p>Artikel berita terbaru mengenai kegiatan, prestasi dan segala aktivitas di Pondok Pesantren Al-Hidayah</p>
+      </blockquote>
+    </div>
+    <div class="row flex-row">
+      <div class="col-sm-4">
+        <form role="form" action="read_more.php" method="get" class="news-style">
+          <input type="text" id="id_berita" name="id_berita" hidden="hidden" />
+          <input type="text" id="judul_berita" hidden="hidden" />
+          <input type="text" id="deskripsi_berita" hidden="hidden" />
+          <input type="text" id="tanggal_berita" hidden="hidden" />          
+          <span id="tanggal_berita_teks" class="date-headline pull-right"></span><br /><br /><br />
+          <span id="judul_berita_teks" class="title-headline"></span><br /><br />
+          <span id="deskripsi_berita_teks" class="description-headline"></span><br /><br />
+          <button type="submit" class="btn button-headline">Baca selengkapnya >></button>
+        </form>
+      </div>
+      <div class="col-sm-4">
+        <form role="form" action="read_more.php" method="get" class="news-style">
+          <input type="text" id="id_berita1" name="id_berita" hidden="hidden" />
+          <input type="text" id="judul_berita1" hidden="hidden" />
+          <input type="text" id="deskripsi_berita1" hidden="hidden" />
+          <input type="text" id="tanggal_berita1"hidden="hidden" />
+          <span id="tanggal_berita1_teks" class="date-headline pull-right"></span><br /><br /><br />
+          <span id="judul_berita1_teks" class="title-headline"></span><br /><br />
+          <span id="deskripsi_berita1_teks" class="description-headline"></span><br /><br />
+          <button type="submit" class="btn button-headline">Baca selengkapnya >></button>
+        </form>
+      </div>
+      <div class="col-sm-4">
+        <form role="form" action="read_more.php" method="get" class="news-style">
+          <input type="text" id="id_berita2" name="id_berita" hidden="hidden" />
+          <input type="text" id="judul_berita2" hidden="hidden" />
+          <input type="text" id="deskripsi_berita2" hidden="hidden" />
+          <input type="text" id="tanggal_berita2" hidden="hidden" />
+          <span id="tanggal_berita2_teks" class="date-headline pull-right"></span><br /><br /><br />
+          <span id="judul_berita2_teks" class="title-headline"></span><br /><br />
+          <span id="deskripsi_berita2_teks" class="description-headline"></span><br /><br />
+          <button type="submit" class="btn button-headline">Baca selengkapnya >></button>
+        </form>
+      </div>
+    </div>
+    <br />
+    
+    <!--<form role="form" action="read_more.php" method="get" class="news-style">
+      <div class="col-sm-4">
+        <div class="thumbnail effect3" style="background-color:#c6deaf;">
+          <input type="text" id="id_berita" name="id_berita" hidden="hidden" />
+          <input type="text" id="judul_berita" hidden="hidden" />
+          <input type="text" id="deskripsi_berita" hidden="hidden" />
+          <input type="text" id="tanggal_berita" hidden="hidden" />          
+          <span id="tanggal_berita_teks" class="date-headline pull-right" style="background-color:#d0e3bd;"></span><br /><br />
+          <span id="judul_berita_teks" class="title-headline"></span><br /><br />
+          <span id="deskripsi_berita_teks" class="description-headline" style="background-color:#d0e3bd;"></span><br /><br />
+          <button type="submit" class="btn button-headline">Baca selengkapnya >></button>
+        </div>
+      </div>
+    </form>-->
+    <!--<form role="form" action="read_more.php" method="get" class="news-style">
+      <div class="col-sm-4">
+        <div class="thumbnail effect2" style="background-color:#b4d395;">
+          <input type="text" id="id_berita1" name="id_berita" hidden="hidden" />
+          <input type="text" id="judul_berita1" hidden="hidden" />
+          <input type="text" id="deskripsi_berita1" hidden="hidden" />
+          <input type="text" id="tanggal_berita1"hidden="hidden" />
+          <span id="tanggal_berita1_teks" class="date-headline pull-right" style="background-color:#bdd8a2;"></span><br /><br />
+          <span id="judul_berita1_teks" class="title-headline"></span><br /><br />
+          <span id="deskripsi_berita1_teks" class="description-headline" style="background-color:#bdd8a2;"></span><br /><br />
+          <button type="submit" class="btn button-headline">Baca selengkapnya >></button>
+        </div>
+      </div>
+    </form>-->
+    <!--<form role="form" action="read_more.php" method="get" class="news-style">
+      <div class="col-sm-4">
+        <div class="thumbnail effect4" style="background-color:#a1c87b;">
+          <input type="text" id="id_berita2" name="id_berita" hidden="hidden" />
+          <input type="text" id="judul_berita2" hidden="hidden" />
+          <input type="text" id="deskripsi_berita2" hidden="hidden" />
+          <input type="text" id="tanggal_berita2" hidden="hidden" />
+          <span id="tanggal_berita2_teks" class="date-headline pull-right" style="background-color:#aacd88;"></span><br /><br />
+          <span id="judul_berita2_teks" class="title-headline"></span><br /><br />
+          <span id="deskripsi_berita2_teks" class="description-headline" style="background-color:#aacd88;"></span><br /><br />
+          <button type="submit" class="btn button-headline">Baca selengkapnya >></button>
+        </div>
+      </div>
+    </form>-->
+        
+  </div>
+  
+  <div class="row row-announcement" id="announcement">
+  
+    <div class="header-section-announcement">
+      <blockquote>
+        <span>PENGUMUMAN</span>
+        <p>Daftar pengumuman Pondok Pesantren Al-Hidayah</p>
+      </blockquote>
+    </div>
+    <ul class="list-group announcement-style">
+	  <input type="text" id="id_pengumuman" hidden="hidden" />
+      <input type="text" id="konten_pengumuman" hidden="hidden" />
+      <input type="text" id="tanggal_pengumuman" hidden="hidden" />
+      <li class="list-group-item">
+        <span class="glyphicon glyphicon-bookmark announcement-glyhpicon-first"></span>
+        <span class="glyphicon glyphicon-bookmark announcement-glyhpicon-last"></span>
+        <span class="list-group-item-heading date-announcement" id="tanggal_pengumuman_text"></span><br />
+        <p class="list-group-item-text" id="konten_pengumuman_text"></p>
+      </li>
+      <input type="text" id="id_pengumuman1" hidden="hidden" />
+      <input type="text" id="konten_pengumuman1" hidden="hidden" />
+      <input type="text" id="tanggal_pengumuman1" hidden="hidden" />
+      <li class="list-group-item">
+        <span class="glyphicon glyphicon-bookmark announcement-glyhpicon-first"></span>
+        <span class="glyphicon glyphicon-bookmark announcement-glyhpicon-last"></span>
+        <span class="list-group-item-heading date-announcement" id="tanggal_pengumuman1_text"></span><br />
+        <p class="list-group-item-text" id="konten_pengumuman1_text"></p>
+      </li>
+      <input type="text" id="id_pengumuman2" hidden="hidden" />
+      <input type="text" id="konten_pengumuman2" hidden="hidden" />
+      <input type="text" id="tanggal_pengumuman2" hidden="hidden" />
+      <li class="list-group-item">
+        <span class="glyphicon glyphicon-bookmark announcement-glyhpicon-first"></span>
+        <span class="glyphicon glyphicon-bookmark announcement-glyhpicon-last"></span>
+        <span class="list-group-item-heading date-announcement" id="tanggal_pengumuman2_text"></span><br />
+        <p class="list-group-item-text" id="konten_pengumuman2_text"></p>
+      </li>
+    </ul>
+  
+  </div>
+  
+  <footer class="text-center footer-style">
+  
+    <div class="row">
+      <div class="col-sm-12 footer-style-header">
+        <a class="logo-font" href="index.html" title="Al-Hidayah">
+          <span class="logo-style">Al-Hidayah</span>
+          <p class="section-header">Pondok Pesantren Islam Modern</p>
+        </a>
+        <hr class="footer-line" />
+        <p class="connected-tag">Tetap terhubung dengan kami:</p>
+      	<form class="form-inline">
+  	      <div class="form-group">
+            <a href="#" id="blogger-icon" class="socmed-icon">
+              <img class="img-responsive" id="blogger-black" src="images/socmed_icons/1482846014_blogger_company_social_media_logo.png" alt="blogger" title="blogger" width="48" height="48" style="display:inline;" />
+              <img class="img-responsive" id="blogger-white" src="images/socmed_icons/1482857526_blogger_social_media_company_logo.png" alt="blogger" title="blogger" width="48" height="48" style="display:inline;" />
+            </a>
+            <a href="#" id="facebook-icon" class="socmed-icon">
+               <img class="img-responsive" id="facebook-black" src="images/socmed_icons/1482845476_facebook_company_social_media_logo.png" alt="facebook" title="facebook" width="48" height="48" style="display:inline;" />
+               <img class="img-responsive" id="facebook-white" src="images/socmed_icons/1482857378_facebook_social_media_company_logo.png" alt="facebook" title="facebook" width="48" height="48" style="display:inline;" />
+            </a>
+            <a href="#" id="google-icon" class="socmed-icon">
+               <img class="img-responsive" id="google-black" src="images/socmed_icons/1482845920_google_plus_company_social_media_logo.png" alt="google+" title="google+" width="48" height="48" style="display:inline;" />
+               <img class="img-responsive" id="google-white" src="images/socmed_icons/1482857210_google_plus_social_media_company_logo.png" alt="google+" title="google+" width="48" height="48" style="display:inline;" />
+            </a>
+            <a href="#" id="instagram-icon" class="socmed-icon">
+               <img class="img-responsive" id="instagram-black" src="images/socmed_icons/1482846249_instagram_company_social_media_logo.png" alt="instagram" title="instagram" width="48" height="48" style="display:inline;" />
+               <img class="img-responsive" id="instagram-white" src="images/socmed_icons/1482856894_instagram_social_media_company_logo.png" alt="instagram" title="instagram" width="48" height="48" style="display:inline;" />
+            </a>
+            <a href="#" id="twitter-icon" class="socmed-icon">
+               <img class="img-responsive" id="twitter-black" src="images/socmed_icons/1482845819_twitter_company_social_media_logo.png" alt="twitter" title="twitter" width="48" height="48" style="display:inline;" />
+               <img class="img-responsive" id="twitter-white" src="images/socmed_icons/1482856402_twitter_social_media_company_logo.png" alt="twitter" title="twitter" width="48" height="48" style="display:inline;" />
+            </a>
+          </div>
+         </form>
+         <hr class="footer-line" />
+         
+      </div>
+    </div>
+    
+    <div class="row">
+      <nav class="navbar footer-navbar navbar-default">
+          <div class="container-fluid">
+            <ul class="nav navbar-nav footer-navbar-style">
+              <li class="parallelogram footer-navbar-menu-style"><a href="profile.html"><span>Profil</span></a></li>
+              <li class="parallelogram footer-navbar-menu-style"><a href="organization.html"><span>Organisasi</span></a></li>
+              <li class="parallelogram footer-navbar-menu-style"><a href="new_academic.html"><span>Akademik Baru</span></a></li>
+              <li class="parallelogram footer-navbar-menu-style"><a href="contact.html"><span>Kontak</span></a></li>
+              <li class="parallelogram footer-navbar-menu-style"><a href="gallery.html"><span>Galeri</span></a></li>
+              <li class="parallelogram footer-navbar-menu-style"><a href="news.html"><span>Berita</span></a></li>
+              <li class="parallelogram"><a href="donation.html"><span>Donasi</span></a></li>
+            </ul>
+          </div>
+        </nav>
+    </div>
+    
+    <div class="row">
+      <div class="col-sm-12 footer-style-footer">
+        <p>&copy; 2016 Pondok Pesantren Al-Hidayah | Kota Batu, Jawa Timur</p>
+      </div>
+    </div>
+    
+  </footer>
+  
+</div>
+
+</body>
+</html>
